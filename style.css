@@ -42,7 +42,7 @@ h1 {
 
 .options {
 	/*margin-left: 55%;*/
-	background: url("assets/img/Black_Background.png") bottom center no-repeat;
+	background: url("assets/img/Black Background.png") bottom center no-repeat;
 	background-size: 450px 450px;
 	width: 600px;
 	height: 450px;
@@ -85,23 +85,23 @@ h1 {
 	transition: all 0.4s;
 }
 
-#mole1, #mole5, #mole9 {
-	background: url("mole1.png") bottom center no-repeat;
+#mole1, #mole6, #mole8 {
+	background: url("assets/img/mole1.png") bottom center no-repeat;
 	background-size: 60%;
 }
 
-#mole2, #mole6 {
-	background: url("mole2.png") bottom center no-repeat;
+#mole2, #mole7 {
+	background: url("assets/img/mole2.png") bottom center no-repeat;
 	background-size: 40%;
 }
 
-#mole3, #mole7 {
-	background: url("mole3.png") bottom center no-repeat;
+#mole3, #mole5 {
+	background: url("assets/img/mole3.png") bottom center no-repeat;
 	background-size: 60%;
 }
 
-#mole4, #mole8 {
-	background: url("mole4.png") bottom center no-repeat;
+#mole4, #mole9 {
+	background: url("assets/img/mole4.png") bottom center no-repeat;
 	background-size: 40%;
 }
 
