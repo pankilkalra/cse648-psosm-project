@@ -78,13 +78,31 @@ h1 {
 	bottom: -30px;
 }
 .mole {
-	background: url("assets/img/mole4.png") bottom center no-repeat;
-	background-size: 60%;
 	position: absolute;
 	top: 100%;
 	width: 100%;
 	height: 100%;
 	transition: all 0.4s;
+}
+
+#mole1, #mole5, #mole9 {
+	background: url("mole1.png") bottom center no-repeat;
+	background-size: 60%;
+}
+
+#mole2, #mole6 {
+	background: url("mole2.png") bottom center no-repeat;
+	background-size: 40%;
+}
+
+#mole3, #mole7 {
+	background: url("mole3.png") bottom center no-repeat;
+	background-size: 60%;
+}
+
+#mole4, #mole8 {
+	background: url("mole4.png") bottom center no-repeat;
+	background-size: 40%;
 }
 
 
