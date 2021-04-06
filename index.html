@@ -30,6 +30,15 @@
     <div class="hole hole6">
       <div class="mole"></div>
     </div>
+    <div class="hole hole7">
+      <div class="mole"></div>
+    </div>
+    <div class="hole hole8">
+      <div class="mole"></div>
+    </div>
+    <div class="hole hole9">
+      <div class="mole"></div>
+    </div>
   </div>
 
 <script>
@@ -40,9 +49,12 @@ let lastHole;
 let timeUp = false;
 let score = 0;
 
+// moles.style.setProperty('')
+
 function randomTime(min, max) {
 	// Let's create the random amount of time the mole shows up
-	return Math.round(Math.random() * (max - min) + min);
+	// return Math.round(Math.random() * (max - min) + min);
+  return 1000;
 }
 
 function randomHole(holes) {
@@ -82,7 +94,7 @@ function startGame() {
 	peep();
 	setTimeout(() => {
 		timeUp = true;
-	}, 10000);
+	}, 60000);
 }
 </script>
 </body>

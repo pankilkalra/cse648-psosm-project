@@ -31,12 +31,23 @@ h1 {
 }
 
 .game {
+	margin-left: 700px;
+	width: 600px;
+	height: 400px;
+	display: flex;
+	flex-wrap: wrap;
+	/*margin: 0 auto;*/
+}
+
+.options{
 	width: 600px;
 	height: 400px;
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 auto;
 }
+
+
 
 .hole {
 	flex: 1 0 33.33%;
@@ -46,7 +57,7 @@ h1 {
 
 .hole:after {
 	display: block;
-	background: url(dirt.svg) bottom center no-repeat;
+	background: url("hole.png") bottom center no-repeat;
 	background-size: contain;
 	content: "";
 	width: 100%;
@@ -55,9 +66,8 @@ h1 {
 	z-index: 2;
 	bottom: -30px;
 }
-
 .mole {
-	background: url("mole.svg") bottom center no-repeat;
+	background: url("mole4.png") bottom center no-repeat;
 	background-size: 60%;
 	position: absolute;
 	top: 100%;
@@ -65,6 +75,7 @@ h1 {
 	height: 100%;
 	transition: all 0.4s;
 }
+
 
 .hole.up .mole {
 	top: 0;
