@@ -19,10 +19,11 @@ body {
 }
 
 h1 {
+	margin-top: 10px	;
 	text-align: center;
 	font-size: 10rem;
 	line-height: 1;
-	margin-bottom: 0;
+	margin-bottom: 10px;
 }
 
 .score {
@@ -32,54 +33,27 @@ h1 {
 	border-radius: 1rem;
 }
 
-/*.container {*/
-/*	width: 80%;*/
-/*	height: 500px;*/
-/*	margin: auto;*/
-/*	padding: 10px;*/
-/*}*/
-
-/*.options {*/
-/*	width: 15%;*/
-/*	height: 200px;*/
-/*	background: black;*/
-/*	float: left;*/
-/*}*/
-
-/*.game {*/
-/*	margin-left: 15%;*/
-/*	height: 200px;*/
-/*	background: black;*/
-/*}*/
-/*.game {*/
-/*	margin-left: 45%;*/
-/*	!*width: 600px;*!*/
-/*	height: 400px;*/
-/*	background: blue;*/
-/*	display: flex;*/
-/*	flex-wrap: wrap;*/
-/*	!*margin: 0 auto;*!*/
-/*}*/
-
 .container {
-	width: 1200px;
-	height: 200px;
+	width: 1400px;
+	height: 450px;
 	margin: auto;
 	padding: 10px;
 }
 
 .options {
 	/*margin-left: 55%;*/
-	width: 400px;
-	height: 400px;
-	background: black;
+	background: url("assets/img/Black_Background.png") bottom center no-repeat;
+	background-size: 450px 450px;
+	width: 600px;
+	height: 450px;
+	/*background: black;*/
 	float: left;
 }
 
 .game {
 	margin-left: 800px;
-	width: 400px;
-	height: 400px;
+	width: 460px;
+	height: 430px;
 	display: flex;
 	flex-wrap: wrap;
 	/*background: blue;*/
@@ -127,6 +101,7 @@ button {
 	color: #fff;
 	font-size: 2em;
 	font-family: "Amatic SC";
+	margin-bottom: 20px;
 }
 
 button:active,
