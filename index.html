@@ -69,6 +69,7 @@
     let timeUp = false;
     let score = 0;
     var prev = [];
+    var stop = false;
 
     // moles.style.setProperty('')
 
@@ -125,20 +126,26 @@
         const hole = randomHole(holes);
         hole.forEach(up);
         setTimeout(() => {
-            if (!timeUp) peep();
             hole.forEach(down);
-        }, time); //after the time is up we want the moles to disappear and remove the class
+        }, time); //after the time is up we want the moles to disappear
+        setTimeout(() => {
+            stop = false;
+            if (!timeUp) peep();
+        }, time+500); //after some time we want the moles to reappear
     }
 
     function bunk(e) {
 
-        if (!e.isTrusted) return; // close out the fake clicks during the game
+        if (!e.isTrusted || stop) return; // close out the fake clicks during the game
+        stop = true;
         score++;
         this.classList.remove("up");
         scoreBoard.textContent = score;
     }
 
-    moles.forEach(mole => mole.addEventListener("click", bunk));
+    if (!stop){
+        moles.forEach(mole => mole.addEventListener("click", bunk));
+    }
 
     function startGame() {
         scoreBoard.textContent = 0;
