@@ -131,6 +131,7 @@
     }
 
     function bunk(e) {
+
         if (!e.isTrusted) return; // close out the fake clicks during the game
         score++;
         this.classList.remove("up");

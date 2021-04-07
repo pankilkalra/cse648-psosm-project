@@ -83,6 +83,11 @@ h1 {
 	width: 100%;
 	height: 100%;
 	transition: all 0.4s;
+	cursor : url("assets/img/Hammer2.png"), auto;
+}
+
+.mole:whacked{
+
 }
 
 #mole1, #mole6, #mole8 {
