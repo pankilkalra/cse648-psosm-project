@@ -14,17 +14,20 @@
   <section class="container">
 
     <div class="options">
-      <div class="hol hole1">
-        <div class="mole"></div>
+      <div class="ques">
+        <p id = "q">What is Whatsapp's privacy Policy? Have you ever read it?</p>
       </div>
-      <div class="hol hole2">
-        <div class="mole"></div>
+      <div class="op" id = "op1">
+        <img src="assets/img/TextBox_Blue.png" class="op-img"></img>
       </div>
-      <div class="hol hole3">
-        <div class="mole"></div>
+      <div class="op" id = "op2">
+        <img src="assets/img/TextBox_Green.png" class="op-img"></img>
       </div>
-      <div class="hol hole4">
-        <div class="mole"></div>
+      <div class="op" id = "op3">
+        <img src="assets/img/TextBox_Pink.png" class="op-img"></img>
+      </div>
+      <div class="op" id = "op4">
+        <img src="assets/img/TextBox_Yellow.png" class="op-img"></img>
       </div>
     </div>
 
@@ -104,20 +107,16 @@
         }
         const hole4 = holes[idx];
         done.push(idx);
-        console.log(prev);
-        console.log(done);
         prev = done;
         return [hole1, hole2, hole3, hole4];
     }
 
     function up(h){
         h.classList.add("up");
-        console.log(h.classList);
     }
 
     function down(h){
         h.classList.remove("up");
-        console.log(h.classList);
     }
 
     function peep() {
@@ -131,8 +130,9 @@
     }
 
     function bunk(e) {
-
+        console.log(this.classList);
         if (!e.isTrusted) return; // close out the fake clicks during the game
+        // e.target.style.cursor = "url(\"assets/img/2915.jpg\"), auto";
         score++;
         this.classList.remove("up");
         scoreBoard.textContent = score;
