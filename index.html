@@ -72,7 +72,6 @@
     let timeUp = false;
     let score = 0;
     var prev = [];
-    var stop = false;
 
     // moles.style.setProperty('')
 
@@ -108,47 +107,52 @@
         }
         const hole4 = holes[idx];
         done.push(idx);
-        console.log(prev);
-        console.log(done);
         prev = done;
         return [hole1, hole2, hole3, hole4];
     }
 
     function up(h){
         h.classList.add("up");
-        console.log(h.classList);
     }
 
     function down(h){
         h.classList.remove("up");
-        console.log(h.classList);
     }
 
     function peep() {
         const time = randomTime(200, 1000);
         const hole = randomHole(holes);
-        hole.forEach(up);
+
+      hole.forEach(up);
+
         setTimeout(() => {
-            hole.forEach(down);
-        }, time); //after the time is up we want the moles to disappear
-        setTimeout(() => {
-            stop = false;
             if (!timeUp) peep();
-        }, time+500); //after some time we want the moles to reappear
+            hole.forEach(down);
+        }, time); //after the time is up we want the moles to disappear and remove the class
     }
 
     function bunk(e) {
+        console.log(this.classList);
+        if (!e.isTrusted) return; // close out the fake clicks during the game
+        // e.target.style.cursor = "url(\"assets/img/2915.jpg\"), auto";
 
-        if (!e.isTrusted || stop) return; // close out the fake clicks during the game
-        stop = true;
-        score++;
-        this.classList.remove("up");
+        temp1 = e.target.style.background
+        temp2 = e.target.style.backgroundSize
+
+        e.target.style.background = "url(\"assets/img/mole2.png\") bottom center no-repeat";
+        e.target.style.backgroundSize = "40%";
+
+      setTimeout(() => {
+          e.target.style.background = temp1
+          e.target.style.backgroundSize = temp2
+        }, 1000)
+
+      this.classList.remove("up");
+      score++;
         scoreBoard.textContent = score;
     }
 
-    if (!stop){
-        moles.forEach(mole => mole.addEventListener("click", bunk));
-    }
+    moles.forEach(mole => mole.addEventListener("click", bunk));
 
     function startGame() {
         scoreBoard.textContent = 0;
