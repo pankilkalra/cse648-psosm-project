@@ -77,8 +77,12 @@
     var iter = 0;
     var correct_answer_color = "";
     const color = ["blue", "green", "pink", "yellow"];
-    const questions = ["Which of the following can you not change on whatsapp?","Whatsapp is a part of which companies?"];
-    const choices = [["Age","Phone number","Name","Profile Picture"],["Facebook","Google", "Microsoft","Oracle"]];
+    const questions = ["Which of the following can you not change on Whatsapp?","Whatsapp is a part of which company?",
+        "What content can Whatsapp see in your personal chats?","What is the minimum age to have a Whatsapp account?",
+        "What information is not collected by Whatsapp?"];
+    const choices = [["Age","Phone number","Name","Profile Picture"],["Facebook","Google", "Microsoft","Oracle"],
+        ["None","Call","Location","Messages"],["13","18","11","8"],
+        ["Browser search history","Usage And Log Information","Device And Connection Information","Location Information"]];
 
     function randomTime(min, max) {
         // Let's create the random amount of time the mole shows up
@@ -146,7 +150,6 @@
         let temp2 = e.target.style.backgroundSize;
 
         let temp3 = this.classList[1];
-        // let temp4 = this.classList[1].target.style.backgroundSize;
 
         console.log(temp3);
 
