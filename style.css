@@ -1,3 +1,8 @@
+@font-face {
+	font-family:"OCR";
+	src: url("assets/OCR A Std Regular.ttf") format("truetype");
+}
+
 html {
 	box-sizing: border-box;
 	font-size: 10px;
@@ -13,15 +18,16 @@ html {
 body {
 	padding: 0;
 	margin: 0;
-	font-family: "Amatic SC", cursive;
+	/*font-family: "Amatic SC", cursive;*/
 }
 
 h1 {
 	margin-top: 10px	;
 	text-align: center;
-	font-size: 10rem;
+	font-size: 8rem;
 	line-height: 1;
 	margin-bottom: 10px;
+	font-family: "OCR";
 }
 
 .score {
@@ -29,6 +35,7 @@ h1 {
 	padding: 0 3rem;
 	line-height: 1;
 	border-radius: 1rem;
+	font-family: "OCR";
 }
 
 .container {
@@ -94,11 +101,11 @@ h1 {
 
 #q {
 	color: aquamarine;
-	font-size: 3em;
-	font-family: "Amatic SC";
+	font-size: 2.5em;
+	font-family: "OCR";
 	text-align: center;
-	border-style: solid;
-	border-color: red;
+	/*border-style: solid;*/
+	/*border-color: red;*/
 }
 
 .op-img {
@@ -119,22 +126,22 @@ h1 {
 	transition: all 0.4s;
 }
 
-#mole1, #mole6, #mole8 {
+.mole1 {
 	background: url("assets/img/mole1.png") bottom center no-repeat;
 	background-size: 60%;
 }
 
-#mole2, #mole7 {
+.mole2 {
 	background: url("assets/img/mole2.png") bottom center no-repeat;
 	background-size: 40%;
 }
 
-#mole3, #mole5 {
+.mole3 {
 	background: url("assets/img/mole3.png") bottom center no-repeat;
 	background-size: 60%;
 }
 
-#mole4, #mole9 {
+.mole4 {
 	background: url("assets/img/mole4.png") bottom center no-repeat;
 	background-size: 40%;
 }
@@ -150,8 +157,8 @@ button {
 	border-radius: 25%;
 	background-color: black;
 	color: #fff;
-	font-size: 3em;
-	font-family: "Amatic SC";
+	font-size: 2em;
+	font-family: "OCR";
 	margin-bottom: 10px;
 }
 
