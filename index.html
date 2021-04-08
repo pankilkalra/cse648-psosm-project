@@ -75,8 +75,10 @@
     let score = 0;
     var prev = [];
     var iter = 0;
-    const questions = ["Which of the following can you not change on whatsapp?","Whatsapp is a part of which companies?"]
-    const choices = [["Age","Phone number","Name","Profile Picture"],["Facebook","Google", "Microsoft","Oracle"]]
+    var correct_answer_color = "";
+    const color = ["blue", "green", "pink", "yellow"];
+    const questions = ["Which of the following can you not change on whatsapp?","Whatsapp is a part of which companies?"];
+    const choices = [["Age","Phone number","Name","Profile Picture"],["Facebook","Google", "Microsoft","Oracle"]];
 
     function randomTime(min, max) {
         // Let's create the random amount of time the mole shows up
@@ -140,8 +142,31 @@
         if (!e.isTrusted) return; // close out the fake clicks during the game
         // e.target.style.cursor = "url(\"assets/img/2915.jpg\"), auto";
 
-        temp1 = e.target.style.background
-        temp2 = e.target.style.backgroundSize
+        let temp1 = e.target.style.background;
+        let temp2 = e.target.style.backgroundSize;
+
+        let temp3 = this.classList[1];
+        // let temp4 = this.classList[1].target.style.backgroundSize;
+
+        console.log(temp3);
+
+        let color_selected = "default";
+
+        if (temp3.localeCompare("mole1") == 0){
+            color_selected = 'yellow';
+        }
+
+        if (temp3.localeCompare("mole2") == 0){
+            color_selected = 'pink';
+        }
+
+        if (temp3.localeCompare("mole3") == 0){
+            color_selected = 'green';
+        }
+
+        if (temp3.localeCompare("mole4") == 0){
+            color_selected = 'blue';
+        }
 
         e.target.style.background = "url(\"assets/img/mole2.png\") bottom center no-repeat";
         e.target.style.backgroundSize = "40%";
@@ -152,8 +177,12 @@
         }, 1000)
 
         this.classList.remove("up");
-        score++;
-        scoreBoard.textContent = score;
+        console.log(color_selected);
+        console.log(correct_answer_color);
+        if(color_selected.localeCompare(correct_answer_color)==0) {
+            score++;
+            scoreBoard.textContent = score;
+        }
         iter++;
         newQuestion();
     }
@@ -169,6 +198,12 @@
         let choice = choices[iter];
         let correct_answer = choice[0];
         shuffle(choice);
+        for(let i=0;i<4;i++){
+            if(choice[i] == correct_answer){
+                correct_answer_color = color[i];
+                break;
+            }
+        }
         questionbox.textContent = question;
         for(let i=0;i<4;i++){
             choicebox[i].textContent = choice[i];
