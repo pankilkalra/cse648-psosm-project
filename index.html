@@ -33,31 +33,31 @@
 
     <div class="game">
         <div class="hole hole1">
-            <div class="mole mole1"></div>
+            <div class="mole mole1" id = "hole1"></div>
         </div>
         <div class="hole hole2">
-            <div class="mole mole2"></div>
+            <div class="mole mole2" id = "hole2"></div>
         </div>
         <div class="hole hole3">
-            <div class="mole mole3"></div>
+            <div class="mole mole3" id = "hole3"></div>
         </div>
         <div class="hole hole4">
-            <div class="mole mole4"></div>
+            <div class="mole mole4" id = "hole4"></div>
         </div>
         <div class="hole hole5">
-            <div class="mole mole1"></div>
+            <div class="mole mole1" id = "hole5"></div>
         </div>
         <div class="hole hole6">
-            <div class="mole mole2"></div>
+            <div class="mole mole2" id = "hole6"></div>
         </div>
         <div class="hole hole7">
-            <div class="mole mole3"></div>
+            <div class="mole mole3" id = "hole7"></div>
         </div>
         <div class="hole hole8">
-            <div class="mole mole4"></div>
+            <div class="mole mole4" id = "hole8"></div>
         </div>
         <div class="hole hole9">
-            <div class="mole mole1"></div>
+            <div class="mole mole1" id = "hole9"></div>
         </div>
     </div>
 </section>
@@ -75,6 +75,7 @@
     let score = 0;
     var prev = [];
     var iter = 0;
+    var mole_color_iter = 0;
     var correct_answer_color = "";
     const color = ["blue", "green", "pink", "yellow"];
     const questions = ["Which of the following can you not change on Whatsapp?","Whatsapp is a part of which company?",
@@ -98,6 +99,21 @@
         }
         const hole1 = holes[idx];
         done.push(idx);
+        var hole_id = "hole".concat((idx+1).toString());
+        console.log(mole_color_iter);
+        if (mole_color_iter%4==0){
+            document.getElementById(hole_id).className = "mole mole4";
+        }
+        if (mole_color_iter%4==1){
+            document.getElementById(hole_id).className = "mole mole3";
+        }
+        if (mole_color_iter%4==2){
+            document.getElementById(hole_id).className = "mole mole2";
+        }
+        if (mole_color_iter%4==3){
+            document.getElementById(hole_id).className = "mole mole1";
+        }
+        mole_color_iter ++;
         return [hole1];
         // idx = Math.floor(Math.random() * holes.length);
         // while (done.includes((idx)) || prev.includes(idx)){
