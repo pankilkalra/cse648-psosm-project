@@ -63,26 +63,28 @@ h1 {
 	display: flex;
 	flex-wrap: wrap;
 	/*background: blue;*/
-	cursor : url("assets/img/Hammer2.png"), auto;
+	cursor : url("assets/img/Hammer.png"), auto;
 }
 
 
 .hole {
-	flex: 1 0 33.33%;
+	flex: 1 0 30%;
 	overflow: hidden;
 	position: relative;
 }
 
 .hole:after {
+	margin-left: 15px;
+	margin-top: 90px;
 	display: block;
 	background: url("assets/img/hole.png") bottom center no-repeat;
 	background-size: contain;
 	content: "";
-	width: 100%;
+	width: 80%;
 	height: 70px;
 	position: absolute;
 	z-index: 2;
-	bottom: -30px;
+	/*bottom: -5px;*/
 }
 
 .op {
@@ -128,7 +130,7 @@ h1 {
 	top: 100%;
 	width: 100%;
 	height: 100%;
-	transition: all 0.4s;
+	transition: all 0.5s;
 }
 
 .mole1 {
@@ -149,6 +151,30 @@ h1 {
 .mole4 {
 	background: url("assets/img/mole4.png") bottom center no-repeat;
 	background-size: 40%;
+}
+
+.mole1:active{
+	background: url("assets/img/mole1-whacked.png") bottom center no-repeat;
+	background-size: 40%;
+	cursor: url("assets/img/Hammer-tilted.png"), auto;
+}
+
+.mole2:active{
+	background: url("assets/img/mole2-whacked.png") bottom center no-repeat;
+	background-size: 40%;
+	cursor: url("assets/img/Hammer-tilted.png"), auto;
+}
+
+.mole3:active{
+	background: url("assets/img/mole3-whacked.png") bottom center no-repeat;
+	background-size: 40%;
+	cursor: url("assets/img/Hammer-tilted.png"), auto;
+}
+
+.mole4:active{
+	background: url("assets/img/mole4-whacked.png") bottom center no-repeat;
+	background-size: 40%;
+	cursor: url("assets/img/Hammer-tilted.png"), auto;
 }
 
 

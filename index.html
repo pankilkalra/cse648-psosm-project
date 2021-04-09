@@ -63,7 +63,6 @@
 </section>
 
 
-
 <script>
     const holes = document.querySelectorAll(".hole");
     const scoreBoard = document.querySelector(".score");
@@ -77,6 +76,7 @@
     var iter = 0;
     var mole_color_iter = 0;
     var correct_answer_color = "";
+    var flag = false;
     const color = ["blue", "green", "pink", "yellow"];
     const questions = ["Which of the following can you not change on Whatsapp?","Whatsapp is a part of which company?",
         "What content can Whatsapp see in your personal chats?","What is the minimum age to have a Whatsapp account?",
@@ -100,7 +100,7 @@
         const hole1 = holes[idx];
         done.push(idx);
         var hole_id = "hole".concat((idx+1).toString());
-        console.log(mole_color_iter);
+        // console.log(mole_color_iter);
         if (mole_color_iter%4==0){
             document.getElementById(hole_id).className = "mole mole4";
         }
@@ -114,6 +114,7 @@
             document.getElementById(hole_id).className = "mole mole1";
         }
         mole_color_iter ++;
+        console.log(idx);
         return [hole1];
         // idx = Math.floor(Math.random() * holes.length);
         // while (done.includes((idx)) || prev.includes(idx)){
@@ -139,10 +140,12 @@
 
     function up(h){
         h.classList.add("up");
+        flag = true;
     }
 
     function down(h){
         h.classList.remove("up");
+        flag = false;
     }
 
     function peep() {
@@ -162,8 +165,8 @@
         if (!e.isTrusted) return; // close out the fake clicks during the game
         // e.target.style.cursor = "url(\"assets/img/2915.jpg\"), auto";
 
-        let temp1 = e.target.style.background;
-        let temp2 = e.target.style.backgroundSize;
+        // let temp1 = e.target.style.background;
+        // let temp2 = e.target.style.backgroundSize;
 
         let temp3 = this.classList[1];
 
@@ -187,13 +190,13 @@
             color_selected = 'blue';
         }
 
-        e.target.style.background = "url(\"assets/img/mole2.png\") bottom center no-repeat";
-        e.target.style.backgroundSize = "40%";
-
-        setTimeout(() => {
-            e.target.style.background = temp1
-            e.target.style.backgroundSize = temp2
-        }, 1000)
+        // e.target.style.background = "url(\"assets/img/mole2.png\") bottom center no-repeat";
+        // e.target.style.backgroundSize = "40%";
+        //
+        // setTimeout(() => {
+        //     e.target.style.background = temp1
+        //     e.target.style.backgroundSize = temp2
+        // }, 1000)
 
         this.classList.remove("up");
         console.log(color_selected);
