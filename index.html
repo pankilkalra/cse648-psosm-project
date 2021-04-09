@@ -13,7 +13,7 @@
 
 <section class="container">
 
-    <div class="options">
+    <div class="options" id = "options">
         <div class="ques">
             <p id = "q"></p>
         </div>
@@ -77,6 +77,8 @@
     var mole_color_iter = 0;
     var correct_answer_color = "";
     var flag = false;
+    let tempp1;
+    let tempp2;
     const color = ["blue", "green", "pink", "yellow"];
     const questions = ["Which of the following can you not change on Whatsapp?","Whatsapp is a part of which company?",
         "What content can Whatsapp see in your personal chats?","What is the minimum age to have a Whatsapp account?",
@@ -204,9 +206,35 @@
         if(color_selected.localeCompare(correct_answer_color)==0) {
             score++;
             scoreBoard.textContent = score;
+            // background: url("assets/img/Black Background.png") bottom center no-repeat;
+            // background-size: 650px 480px;
+            tempp1 = document.getElementById("options").style.background;
+            tempp2 = document.getElementById("options").style.backgroundSize
+
+            document.getElementById("options").style.background = "url(\"assets/img/CorrechBg.png\")";
+            document.getElementById("options").style.backgroundSize =  "650px 480px";
+
+            setTimeout(() => {
+                document.getElementById("options").style.background = tempp1;
+                document.getElementById("options").style.backgroundSize =  tempp2;
+            }, 250)
+            iter++;
+            newQuestion();
         }
-        iter++;
-        newQuestion();
+        else{
+            tempp1 = document.getElementById("options").style.background;
+            tempp2 = document.getElementById("options").style.backgroundSize
+
+            document.getElementById("options").style.background = "url(\"assets/img/WrongBg.png\")";
+            document.getElementById("options").style.backgroundSize =  "650px 480px";
+
+            setTimeout(() => {
+                document.getElementById("options").style.background = tempp1;
+                document.getElementById("options").style.backgroundSize =  tempp2;
+            }, 250)
+        }
+
+
     }
 
     moles.forEach(mole => mole.addEventListener("click", bunk));
@@ -216,6 +244,7 @@
     }
 
     function newQuestion(){
+
         let question = questions[iter];
         let choice = choices[iter];
         let correct_answer = choice[0];
