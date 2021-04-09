@@ -22,6 +22,7 @@ body {
 }
 
 .progress-bar {
+	background-color: #d8d8d8;
 	position: absolute;
 	margin-left: 850px;
 	margin-top: 40px;
@@ -29,7 +30,32 @@ body {
 	border-color: red;
 	height: 25px;
 	width: 500px;
+	border-radius: 20px;
+	/*opacity: 1;*/
 }
+
+.progress-done {
+	background: linear-gradient(to left, #c80e4d, #88439d);
+	box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+	border-radius: 20px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	opacity: 1;
+	width: 0%;
+	transition: 1s ease 0.3s;
+}
+
+/*.progress {*/
+/*	position: relative;*/
+/*	margin: 15px 0;*/
+/*	height: 30px;*/
+/*	width: 300px;*/
+/*}*/
+
+
 
 h1 {
 	margin-top: 10px	;
