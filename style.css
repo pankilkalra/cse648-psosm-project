@@ -21,6 +21,16 @@ body {
 	/*font-family: "Amatic SC", cursive;*/
 }
 
+.progress-bar {
+	position: absolute;
+	margin-left: 850px;
+	margin-top: 40px;
+	border-style: solid;
+	border-color: red;
+	height: 25px;
+	width: 500px;
+}
+
 h1 {
 	margin-top: 10px	;
 	text-align: center;
@@ -57,6 +67,7 @@ h1 {
 }
 
 .game {
+	margin-top: 35px;
 	margin-left: 800px;
 	width: 460px;
 	height: 430px;
