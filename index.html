@@ -11,8 +11,7 @@
 <h1>Whatsapp-A-Mole! <span class="score">0</span></h1>
 <button onClick="startGame()">Start!</button>
 <div class="progress-bar">
-    <div class="progress-done" id = "progress">
-    </div>
+    <div class="progress-done" id = "progress"></div>
 </div>
 
 <section class="container">
@@ -84,6 +83,7 @@
     let tempp1;
     let tempp2;
     let timeleft = 59;
+    let margin_left = -2;
     const color = ["blue", "green", "pink", "yellow"];
     const questions = ["Which of the following can you not change on Whatsapp?","Whatsapp is a part of which company?",
         "What content can Whatsapp see in your personal chats?","What is the minimum age to have a Whatsapp account?",
@@ -121,7 +121,7 @@
             document.getElementById(hole_id).className = "mole mole1";
         }
         mole_color_iter ++;
-        console.log(idx);
+        // console.log(idx);
         return [hole1];
         // idx = Math.floor(Math.random() * holes.length);
         // while (done.includes((idx)) || prev.includes(idx)){
@@ -169,14 +169,17 @@
         setTimeout(() => {
             if (!timeUp){
                 timeleft--;
-                document.getElementById("progress").style.width = Math.round(((60-timeleft)/60)*100) + '%';
-                console.log(Math.round(((60-timeleft)/60)*100) + '%');
+                // console.log(document.getElementById("progress").style);
+                margin_left += 8;
+                document.getElementById("progress").style.marginLeft = margin_left.toString() + "px";
+                // document.getElementById("progress").style.width = Math.round(((60-timeleft)/60)*100) + '%';
+                // console.log(Math.round(((60-timeleft)/60)*100) + '%');
             }
         }, 1000);
     }
 
     function bunk(e) {
-        console.log(this.classList);
+        // console.log(this.classList);
         if (!e.isTrusted) return; // close out the fake clicks during the game
         // e.target.style.cursor = "url(\"assets/img/2915.jpg\"), auto";
 
@@ -185,7 +188,7 @@
 
         let temp3 = this.classList[1];
 
-        console.log(temp3);
+        // console.log(temp3);
 
         let color_selected = "default";
 
@@ -214,8 +217,8 @@
         // }, 1000)
 
         this.classList.remove("up");
-        console.log(color_selected);
-        console.log(correct_answer_color);
+        // console.log(color_selected);
+        // console.log(correct_answer_color);
         if(color_selected.localeCompare(correct_answer_color)==0) {
             score++;
             scoreBoard.textContent = score;
@@ -275,6 +278,7 @@
     }
 
     function startGame() {
+        margin_left = -2;
         newQuestion();
         scoreBoard.textContent = 0;
         score = 0;
