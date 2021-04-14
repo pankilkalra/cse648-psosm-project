@@ -25,7 +25,7 @@ body {
 	background-color: #ff0000;
 	position: absolute;
 	margin-left: 850px;
-	margin-top: 40px;
+	margin-top: 20px;
 	border-style: solid;
 	border-color: black;
 	height: 25px;
@@ -157,7 +157,7 @@ h1 {
 }
 
 #q {
-	color: aquamarine;
+	color: white;
 	font-size: 2.5em;
 	font-family: "OCR";
 	text-align: center;
@@ -189,45 +189,45 @@ h1 {
 
 .mole1 {
 	background: url("assets/img/mole1.png") bottom center no-repeat;
-	background-size: 60%;
+	background-size: 90%;
 }
 
 .mole2 {
 	background: url("assets/img/mole2.png") bottom center no-repeat;
-	background-size: 40%;
+	background-size: 60%;
 }
 
 .mole3 {
 	background: url("assets/img/mole3.png") bottom center no-repeat;
-	background-size: 60%;
+	background-size: 80%;
 }
 
 .mole4 {
 	background: url("assets/img/mole4.png") bottom center no-repeat;
-	background-size: 40%;
+	background-size: 60%;
 }
 
 .mole1:active{
 	background: url("assets/img/mole1-whacked.png") bottom center no-repeat;
-	background-size: 40%;
+	background-size: 120%;
 	cursor: url("assets/img/Hammer-tilted.png"), auto;
 }
 
 .mole2:active{
 	background: url("assets/img/mole2-whacked.png") bottom center no-repeat;
-	background-size: 40%;
+	background-size: 90%;
 	cursor: url("assets/img/Hammer-tilted.png"), auto;
 }
 
 .mole3:active{
 	background: url("assets/img/mole3-whacked.png") bottom center no-repeat;
-	background-size: 40%;
+	background-size: 110%;
 	cursor: url("assets/img/Hammer-tilted.png"), auto;
 }
 
 .mole4:active{
 	background: url("assets/img/mole4-whacked.png") bottom center no-repeat;
-	background-size: 40%;
+	background-size: 90%;
 	cursor: url("assets/img/Hammer-tilted.png"), auto;
 }
 
