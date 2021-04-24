@@ -90,29 +90,41 @@
     let isclicked = false;
 
     const color = ["blue", "green", "pink", "yellow"];
-    const questions = ["Which of the following can you not change on Whatsapp?",
-        "Whatsapp is a part of which company?",
-        "What content can Whatsapp see in your personal chats?",
-        "What is the minimum age to have a Whatsapp account?",
-        "What information is not collected by Whatsapp?",
+    let idx1= [0,1,2,3,4,5,6,7];
+    let idx2= [8,9,10,11,12,13,14,15,16];
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+    shuffleArray(idx1);
+    shuffleArray(idx2);
+    let idx=idx1.concat(idx2);
+    console.log(idx);
+
+
+    const temp1 = ["Which of the following can you not change on WhatsApp?",
+        "WhatsApp is a part of which company?",
+        "What information is not collected by WhatsApp?",
         "I don’t want strangers to see my display picture. What should my display picture settings be?",
         "If I turn my read receipts off, who will be able to see my blue ticks?",
         "Does WhatsApp receive information about me from 3rd parties?",
         "Can you block business accounts?",
-        "After what duration of account activation can you delete your whatsapp account?",
+        "After what duration of account activation can you delete your WhatsApp account?",
         "Can Facebook read your chats and calls?",
         "If I reply to a disappearing message, the quoted text remains in the chat after 7 days",
         "Can disappearing messages be stored in backup?",
         "If I have only allowed my contacts to add me to groups, how can others add me?",
         "Does WhatsApp store the call or message logs like any other Mobile Carrier",
         "What happens to inactive accounts?",
-        "For how long does whatsapp keep undelivered messages?"
+        "For how long does WhatsApp keep undelivered messages?",
+        "What content can WhatsApp see in your personal chats?",
+        "What is the minimum age to have a WhatsApp account?",
 
     ];
-    const choices = [["Age","Phone number","Name","Profile Picture"],
+    const temp2 = [["Age","Phone number","Name","Profile Picture"],
         ["Facebook","Google", "Microsoft","Oracle"],
-        ["None","Call","Location","Messages"],
-        ["13","18","11","8"],
         ["Browser search history","Usage And Log Information","Device And Connection Information","Location Information"],
         ["My contacts only","Everyone","Nobody","Friends of friends"],
         ["Nobody","Everyone","My contacts only","People who have my number"],
@@ -125,8 +137,20 @@
         ["Send me invite that expires in 3 days","Cannot add me in any group","Will get popup: can’t add","Send me an invite that never expires"],
         ["Yes","No","Only frequent ones","Randomly"],
         ["Generally deleted after 120 days","They are sent money","Flagged suspicious","Nothing"],
-        ["30 days","1 day","7 days","365 days"]
+        ["30 days","1 day","7 days","365 days"],
+        ["None","Call","Location","Messages"],
+        ["13","18","11","8"],
     ];
+
+    let questions=[];
+    let choices=[];
+
+    for(let i=0;i<17;i++){
+        questions.push(temp1[idx[i]]);
+        choices.push(temp2[idx[i]]);
+
+    }
+
 
     function randomTime(min, max) {
         // Let's create the random amount of time the mole shows up
