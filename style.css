@@ -32,6 +32,7 @@ body {
 	width: 500px;
 	border-radius: 20px;
 	/*opacity: 1;*/
+	display: none;
 }
 
 .progress-done {
@@ -73,15 +74,28 @@ body {
 
 
 
-h1 {
+#heading {
 	margin-top: 10px	;
 	text-align: center;
 	font-size: 8rem;
 	line-height: 1;
 	margin-bottom: 10px;
 	color: #ffd966;
+	display: none;
 	font-family: "OCR";
 }
+
+#heading2{
+	margin-top: 50px	;
+	text-align: center;
+	font-size: 8rem;
+	line-height: 1;
+	margin-bottom: 10px;
+	color: #ffd966;
+	/*display: none;*/
+	font-family: "OCR";
+}
+
 
 .score {
 	background: rgba(255, 255, 255, 0.2);
@@ -97,6 +111,7 @@ h1 {
 	height: 450px;
 	margin: auto;
 	padding: 10px;
+	display: none;
 }
 
 .options {
@@ -223,17 +238,6 @@ th{
 	/*visibility: hidden ;*/
 }
 
-.moles_crying{
-
-	/*border-style: solid;*/
-	/*border-color: red;*/
-	display: none;
-	margin-top: 50px;
-	height: 130px;
-	width: 400px;
-	margin-left: 36%;
-
-}
 
 .wrong{
 	width: 80%;
@@ -251,6 +255,110 @@ th{
 	width: 100%;
 	font-size: 2em;
 }
+
+.normal_mole{
+
+	/*border-style: solid;*/
+	/*border-color: red;*/
+	/*display: none;*/
+	margin-top: 100px;
+	height: 130px;
+	width: 400px;
+	margin-left: 36%;
+
+}
+
+.name{
+
+	border-style: solid;
+	border-color: red;
+	width:30%;
+	margin:auto;
+
+}
+
+.enter_name{
+	margin-top: 100px;
+	margin-left: 12%;
+
+}
+#fname{
+	height:40px;
+	width:330px;
+	font-size: 3em;
+	font-family: OCR;
+}
+
+.to_game{
+
+}
+
+#getname{
+	margin-top: 30px;
+	margin-left: 39%;
+	height:40px;
+	width:100px;
+
+}
+
+#normal_m1{
+	margin-top: 20px;
+	float:left;
+	background: url("assets/img/mole1.png") bottom center no-repeat;
+	background-size: 110px 100px;
+	width: 110px;
+	height: 100px;
+}
+
+#normal_m2{
+	margin-top: 5px;
+
+	float: left;
+	background: url("assets/img/mole2.png") bottom center no-repeat;
+	background-size: 87px 115px;
+	width: 87px;
+	height: 115px;
+}
+
+#normal_m3{
+	margin-top: 20px;
+
+	float: left;
+	background: url("assets/img/mole3.png") bottom center no-repeat;
+	background-size: 100px 100px;
+	width: 100px;
+	height: 100px;
+}
+
+#normal_m4{
+	margin-top: 20px;
+
+	float: left;
+	background: url("assets/img/mole4.png") bottom center no-repeat;
+	background-size: 87px 100px;
+	width: 87px;
+	height: 100px;
+}
+
+
+
+
+
+
+
+
+.moles_crying{
+
+	/*border-style: solid;*/
+	/*border-color: red;*/
+	display: none;
+	margin-top: 50px;
+	height: 130px;
+	width: 400px;
+	margin-left: 36%;
+
+}
+
 
 #mole_c1{
 	margin-top: 20px;
@@ -341,7 +449,7 @@ th{
 	top: 0;
 }
 
-button {
+#start {
 	display: block;
 	margin: 1em auto;
 	border-radius: 25%;
@@ -350,6 +458,7 @@ button {
 	font-size: 2em;
 	font-family: "OCR";
 	margin-bottom: 10px;
+	display: none;
 }
 
 button:active,
