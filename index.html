@@ -31,6 +31,20 @@
 
 
 <h1 id="heading">Whatsapp-A-Mole! <span class="score">0</span></h1>
+
+
+<div class="wrong" id="wrong">
+    <table id="table" >
+        <tr>
+            <th>Question</th>
+            <th>Your Answer</th>
+            <th>Correct Answer</th>
+        </tr>
+
+    </table>
+</div>
+
+
 <button onClick="startGame()" id="start">Start!</button>
 <div class="progress-bar" id="progress-bar">
     <div class="progress-done" id = "progress"></div>
@@ -56,7 +70,7 @@
         <div class="op" id = "op4">
             <p style = 'background: url("assets/img/TextBox_Yellow.png") no-repeat; background-size: 380px 60px; margin-top: 0px;', class="op-img"></p>
         </div>
-        <div class="lives-level">
+        <div class="lives-level" id="lives-level">
             <p id="level"></p>
             <div class="lives" id = "live1"></div>
             <div class="lives" id = "live2"></div>
@@ -107,6 +121,7 @@
     const live2 = document.querySelector("#live2");
     const live3 = document.querySelector("#live3");
     const level = document.querySelector("#level");
+    var choice=[];
     let lastHole;
     let timeUp = false;
     let score = 0;
@@ -121,6 +136,10 @@
     let margin_left = -2;
     let lives = 0;
     let totaltime = 180000;
+    let feedback_questions=[];
+    let feedback_wrong=[];
+    let feedback_correct=[];
+
 
     let easy = 8;
     let medium = 9;
@@ -195,6 +214,10 @@
 
     }
 
+    let correct=[];
+    for(let i=0;i<questions.length;i++){
+        correct.push(choices[i][0]);
+    }
 
     function randomTime(min, max) {
         // Let's create the random amount of time the mole shows up
@@ -316,16 +339,34 @@
 
             var div = document.getElementById('heading');
             div.textContent="Game Over";
-            // div.style.marginTop="50px";
-
 
             var div = document.getElementById('moles_crying');
             div.style.display="block";
 
+            var div = document.getElementById('wrong');
+            div.style.display="block";
 
-            // window.location="Feedback.html";
-            // console.log(document);
-            // document.querySelector("h2").textContent = score;
+            var table = document.getElementById('table');
+
+
+            let LEN=feedback_questions.length;
+
+            for(let i=0;i<LEN;i++){
+                var row = table.insertRow(-1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                cell1.innerHTML = feedback_questions[i];
+                cell2.innerHTML = feedback_wrong[i];
+                cell3.innerHTML = feedback_correct[i];
+            }
+
+
+
+
+
+
+
         }
         if(lives == 1){
             live1.style.visibility = "hidden";
@@ -383,7 +424,7 @@
         // }, 1000)
 
         this.classList.remove("up");
-        // console.log(color_selected);
+        console.log(color_selected);
         // console.log(correct_answer_color);
         if(isclicked == false) {
             isclicked = true;
@@ -423,6 +464,26 @@
                     document.getElementById("options").style.background = tempp1;
                     document.getElementById("options").style.backgroundSize = tempp2;
                 }, 500)
+
+                feedback_questions.push(questions[iter]);
+                feedback_correct.push(correct[iter]);
+
+                let INDEX=0;
+                if (color_selected.localeCompare("blue") == 0){
+                    INDEX=0;
+                }
+                if (color_selected.localeCompare("green") == 0){
+                    INDEX=1;
+                }
+                if (color_selected.localeCompare("pink") == 0){
+                    INDEX=2;
+                }
+                if (color_selected.localeCompare("yellow") == 0){
+                    INDEX=3;
+                }
+                feedback_wrong.push(choice[INDEX]);
+
+
                 lives--;
                 endgame();
                 iter++;
@@ -439,8 +500,9 @@
 
     function newQuestion(){
         let question = questions[iter];
-        let choice = choices[iter];
+        choice = choices[iter];
         let correct_answer = choice[0];
+
         shuffle(choice);
         for(let i=0;i<4;i++){
             if(choice[i] == correct_answer){
@@ -465,6 +527,9 @@
         lives = 3;
         var div = document.getElementById('start');
         div.style.visibility="hidden";
+
+        var div = document.getElementById('lives-level');
+        div.style.visibility="visible";
 
         newQuestion();
         scoreBoard.textContent = 0;
