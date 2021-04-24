@@ -57,11 +57,11 @@ body {
 
 #progress {
 	background: url("assets/img/Clock.png") no-repeat;
-	background-size: 24px 24px;
+	background-size: 50px 50px;
 	object-fit: contain;
-	height: 25px;
-	margin-top: -2px;
-	margin-left: -2px;
+	height: 50px;
+	margin-top: -15px;
+	margin-left: -25px;
 }
 
 /*.progress {*/
