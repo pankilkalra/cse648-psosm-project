@@ -84,6 +84,7 @@
     let tempp2;
     let timeleft = 59;
     let margin_left = -2;
+    let lives = 0;
     const color = ["blue", "green", "pink", "yellow"];
     const questions = ["Which of the following can you not change on Whatsapp?","Whatsapp is a part of which company?",
         "What content can Whatsapp see in your personal chats?","What is the minimum age to have a Whatsapp account?",
@@ -248,6 +249,8 @@
                 document.getElementById("options").style.background = tempp1;
                 document.getElementById("options").style.backgroundSize =  tempp2;
             }, 250)
+            iter++;
+            newQuestion();
         }
 
 
@@ -279,6 +282,7 @@
 
     function startGame() {
         margin_left = -2;
+        lives = 3;
         newQuestion();
         scoreBoard.textContent = 0;
         score = 0;
