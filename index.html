@@ -280,6 +280,9 @@
             for (let i = 0; i < 4; i++) {
                 choicebox[i].textContent = "";
             }
+            window.location="Feedback.html";
+            console.log(document);
+            document.querySelector("h2").textContent = score;
         }
         if(lives == 1){
             live1.style.visibility = "hidden";
@@ -424,6 +427,8 @@
         peep();
         setTimeout(() => {
             timeUp = true;
+            lives = 0;
+            endgame();
         }, totaltime);
     }
 </script>
