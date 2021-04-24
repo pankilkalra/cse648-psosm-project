@@ -86,7 +86,9 @@
     let margin_left = -2;
     let lives = 0;
     let totaltime = 180000;
-    
+
+    let isclicked = false;
+
     const color = ["blue", "green", "pink", "yellow"];
     const questions = ["Which of the following can you not change on Whatsapp?",
         "Whatsapp is a part of which company?",
@@ -203,6 +205,8 @@
         const time = randomTime(200, 1000);
         const hole = randomHole(holes);
 
+        isclicked = false;
+
         hole.forEach(up);
 
         setTimeout(() => {
@@ -263,37 +267,39 @@
         this.classList.remove("up");
         // console.log(color_selected);
         // console.log(correct_answer_color);
-        if(color_selected.localeCompare(correct_answer_color)==0) {
-            score++;
-            scoreBoard.textContent = score;
-            // background: url("assets/img/Black Background.png") bottom center no-repeat;
-            // background-size: 650px 480px;
-            tempp1 = document.getElementById("options").style.background;
-            tempp2 = document.getElementById("options").style.backgroundSize
+        if(isclicked == false) {
+            isclicked = true;
+            if (color_selected.localeCompare(correct_answer_color) == 0) {
+                score++;
+                scoreBoard.textContent = score;
+                // background: url("assets/img/Black Background.png") bottom center no-repeat;
+                // background-size: 650px 480px;
+                tempp1 = document.getElementById("options").style.background;
+                tempp2 = document.getElementById("options").style.backgroundSize
 
-            document.getElementById("options").style.background = "url(\"assets/img/CorrechBg.png\")";
-            document.getElementById("options").style.backgroundSize =  "650px 480px";
+                document.getElementById("options").style.background = "url(\"assets/img/CorrechBg.png\")";
+                document.getElementById("options").style.backgroundSize = "650px 480px";
 
-            setTimeout(() => {
-                document.getElementById("options").style.background = tempp1;
-                document.getElementById("options").style.backgroundSize =  tempp2;
-            }, 500)
-            iter++;
-            newQuestion();
-        }
-        else{
-            tempp1 = document.getElementById("options").style.background;
-            tempp2 = document.getElementById("options").style.backgroundSize
+                setTimeout(() => {
+                    document.getElementById("options").style.background = tempp1;
+                    document.getElementById("options").style.backgroundSize = tempp2;
+                }, 500)
+                iter++;
+                newQuestion();
+            } else {
+                tempp1 = document.getElementById("options").style.background;
+                tempp2 = document.getElementById("options").style.backgroundSize
 
-            document.getElementById("options").style.background = "url(\"assets/img/WrongBg.png\")";
-            document.getElementById("options").style.backgroundSize =  "650px 480px";
+                document.getElementById("options").style.background = "url(\"assets/img/WrongBg.png\")";
+                document.getElementById("options").style.backgroundSize = "650px 480px";
 
-            setTimeout(() => {
-                document.getElementById("options").style.background = tempp1;
-                document.getElementById("options").style.backgroundSize =  tempp2;
-            }, 500)
-            iter++;
-            newQuestion();
+                setTimeout(() => {
+                    document.getElementById("options").style.background = tempp1;
+                    document.getElementById("options").style.backgroundSize = tempp2;
+                }, 500)
+                iter++;
+                newQuestion();
+            }
         }
 
 
