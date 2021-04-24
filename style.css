@@ -217,6 +217,51 @@ h1 {
 	visibility: hidden;
 }
 
+.moles_crying{
+
+	border-style: solid;
+	border-color: red;
+	display: none;
+	margin-top: 300px;
+	height: 200px;
+	width: 600px;
+	/*margin-left: 300px;*/
+	margin:auto;
+}
+
+#mole_c1{
+	float:left;
+	background: url("assets/img/mole1-whacked.png") bottom center no-repeat;
+	background-size: 100px 100px;
+	width: 100px;
+	height: 100px;
+}
+
+#mole_c2{
+	float: left;
+	background: url("assets/img/mole2-whacked.png") bottom center no-repeat;
+	background-size: 100px 110px;
+	width: 100px;
+	height: 110px;
+}
+
+#mole_c3{
+	float: left;
+	background: url("assets/img/mole3-whacked.png") bottom center no-repeat;
+	background-size: 100px 100px;
+	width: 100px;
+	height: 100px;
+}
+
+#mole_c4{
+	float: left;
+	background: url("assets/img/mole4-whacked.png") bottom center no-repeat;
+	background-size: 100px 100px;
+	width: 100px;
+	height: 100px;
+}
+
+
 .mole1 {
 	background: url("assets/img/mole1.png") bottom center no-repeat;
 	background-size: 90%;
