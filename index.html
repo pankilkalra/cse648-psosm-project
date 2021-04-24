@@ -85,6 +85,8 @@
     let timeleft = 59;
     let margin_left = -2;
     let lives = 0;
+    let totaltime = 180000;
+    
     const color = ["blue", "green", "pink", "yellow"];
     const questions = ["Which of the following can you not change on Whatsapp?","Whatsapp is a part of which company?",
         "What content can Whatsapp see in your personal chats?","What is the minimum age to have a Whatsapp account?",
@@ -181,7 +183,7 @@
             if (!timeUp){
                 timeleft--;
                 // console.log(document.getElementById("progress").style);
-                margin_left += 8;
+                margin_left += (450000/totaltime);
                 document.getElementById("progress").style.marginLeft = margin_left.toString() + "px";
                 // document.getElementById("progress").style.width = Math.round(((60-timeleft)/60)*100) + '%';
                 // console.log(Math.round(((60-timeleft)/60)*100) + '%');
@@ -300,7 +302,7 @@
         peep();
         setTimeout(() => {
             timeUp = true;
-        }, 60000);
+        }, totaltime);
     }
 </script>
 </body>
