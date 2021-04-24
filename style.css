@@ -188,11 +188,23 @@ h1 {
 	transition: all 0.4s;
 }
 
-.lives-span {
+.lives-level {
 	margin-top: 20px;
-	margin-left: 450px;
-	width: 150px;
+	margin-left: 30px;
+	width: 550px;
 	height: 40px;
+}
+
+#level {
+	width: 360px;
+	height: 40px;
+	color: white;
+	margin-right: 40px;
+	font-family: "OCR";
+	font-size: 1.85em;
+	float: left;
+	/*border-style: solid;*/
+	/*border-color: red;*/
 }
 
 #live1, #live2, #live3 {
@@ -202,6 +214,7 @@ h1 {
 	height: 40px;
 	margin-right: 10px;
 	float: left;
+	visibility: hidden;
 }
 
 .mole1 {
