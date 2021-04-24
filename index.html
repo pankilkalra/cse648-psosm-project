@@ -35,7 +35,7 @@
     </div>
 
     <div class="to_game" id="to_game">
-        <button onClick="getName()" id="getname">Start!</button>
+        <button onClick="getName()" id="getname"></button>
     </div>
 
 </div>
@@ -179,6 +179,7 @@
     let feedback_wrong=[];
     let feedback_correct=[];
 
+    var username="";
 
     let easy = 8;
     let medium = 9;
@@ -580,6 +581,37 @@
             lives = 0;
             endgame();
         }, totaltime);
+    }
+
+    function getName(){
+
+
+        var div = document.getElementById('normal_mole');
+        div.remove();
+
+        var div = document.getElementById('heading2');
+        div.remove();
+
+        var div = document.getElementById('name');
+        div.remove();
+
+        var div = document.getElementById('container');
+        div.style.display="block";
+
+
+        var div = document.getElementById('progress-bar');
+        div.style.display="block";
+
+
+        var div = document.getElementById('heading');
+        div.style.display="block";
+
+        var div = document.getElementById('start');
+        div.style.display="block";
+
+        div.style.visibility="hidden";
+        startGame();
+
     }
 </script>
 </body>
