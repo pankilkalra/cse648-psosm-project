@@ -108,42 +108,52 @@
         const hole1 = holes[idx];
         done.push(idx);
         var hole_id = "hole".concat((idx+1).toString());
+        document.getElementById(hole_id).className = "mole mole4";
+        // var hole_id = "hole".concat((idx+1).toString());
         // console.log(mole_color_iter);
-        if (mole_color_iter%4==0){
-            document.getElementById(hole_id).className = "mole mole4";
-        }
-        if (mole_color_iter%4==1){
-            document.getElementById(hole_id).className = "mole mole3";
-        }
-        if (mole_color_iter%4==2){
-            document.getElementById(hole_id).className = "mole mole2";
-        }
-        if (mole_color_iter%4==3){
-            document.getElementById(hole_id).className = "mole mole1";
-        }
-        mole_color_iter ++;
+        // if (mole_color_iter%4==0){
+        //     document.getElementById(hole_id).className = "mole mole4";
+        // }
+        // if (mole_color_iter%4==1){
+        //     document.getElementById(hole_id).className = "mole mole3";
+        // }
+        // if (mole_color_iter%4==2){
+        //     document.getElementById(hole_id).className = "mole mole2";
+        // }
+        // if (mole_color_iter%4==3){
+        //     document.getElementById(hole_id).className = "mole mole1";
+        // }
+        // mole_color_iter ++;
         // console.log(idx);
-        return [hole1];
-        // idx = Math.floor(Math.random() * holes.length);
-        // while (done.includes((idx)) || prev.includes(idx)){
-        //     idx = Math.floor(Math.random() * holes.length);
-        // }
-        // const hole2 = holes[idx];
-        // done.push(idx);
-        // idx = Math.floor(Math.random() * holes.length);
-        // while (done.includes((idx)) || prev.includes(idx)){
-        //     idx = Math.floor(Math.random() * holes.length);
-        // }
-        // const hole3 = holes[idx];
-        // done.push(idx);
-        // idx = Math.floor(Math.random() * holes.length);
-        // while (done.includes((idx)) || prev.includes(idx)){
-        //     idx = Math.floor(Math.random() * holes.length);
-        // }
-        // const hole4 = holes[idx];
-        // done.push(idx);
-        // prev = done;
-        // return [hole1, hole2, hole3, hole4];
+        // return [hole1];
+        idx = Math.floor(Math.random() * holes.length);
+        while (done.includes((idx)) || prev.includes(idx)){
+            idx = Math.floor(Math.random() * holes.length);
+        }
+        const hole2 = holes[idx];
+        done.push(idx);
+        var hole_id = "hole".concat((idx+1).toString());
+        document.getElementById(hole_id).className = "mole mole3";
+
+        idx = Math.floor(Math.random() * holes.length);
+        while (done.includes((idx)) || prev.includes(idx)){
+            idx = Math.floor(Math.random() * holes.length);
+        }
+        const hole3 = holes[idx];
+        done.push(idx);
+        var hole_id = "hole".concat((idx+1).toString());
+        document.getElementById(hole_id).className = "mole mole2";
+
+        idx = Math.floor(Math.random() * holes.length);
+        while (done.includes((idx)) || prev.includes(idx)){
+            idx = Math.floor(Math.random() * holes.length);
+        }
+        const hole4 = holes[idx];
+        done.push(idx);
+        var hole_id = "hole".concat((idx+1).toString());
+        document.getElementById(hole_id).className = "mole mole1";
+        prev = done;
+        return [hole1, hole2, hole3, hole4];
     }
 
     function up(h){
