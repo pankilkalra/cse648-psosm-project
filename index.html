@@ -87,11 +87,20 @@
     let lives = 0;
     let totaltime = 180000;
 
+    let easy = 8;
+    let medium = 9;
+
     let isclicked = false;
 
     const color = ["blue", "green", "pink", "yellow"];
-    let idx1= [0,1,2,3,4,5,6,7];
-    let idx2= [8,9,10,11,12,13,14,15,16];
+    let idx1= [];
+    for(let i=0;i<easy;i++){
+        idx1.push(i)
+    }
+    let idx2= [];
+    for(let i=easy;i<easy+medium;i++){
+        idx2.push(i)
+    }
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -145,7 +154,7 @@
     let questions=[];
     let choices=[];
 
-    for(let i=0;i<17;i++){
+    for(let i=0;i<easy+medium;i++){
         questions.push(temp1[idx[i]]);
         choices.push(temp2[idx[i]]);
 
@@ -294,7 +303,14 @@
         if(isclicked == false) {
             isclicked = true;
             if (color_selected.localeCompare(correct_answer_color) == 0) {
-                score++;
+                if(iter<easy) {
+                    score += 1;
+                }
+                else {
+                    score += 2;
+                }
+                // score++;
+
                 scoreBoard.textContent = score;
                 // background: url("assets/img/Black Background.png") bottom center no-repeat;
                 // background-size: 650px 480px;
