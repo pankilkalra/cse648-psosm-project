@@ -32,6 +32,12 @@
         <div class="op" id = "op4">
             <p style = 'background: url("assets/img/TextBox_Yellow.png") no-repeat; background-size: 380px 60px; margin-top: 0px;', class="op-img"></p>
         </div>
+        <div class="lives-span">
+            <div class="lives" id = "live1"></div>
+            <div class="lives" id = "live2"></div>
+            <div class="lives" id = "live3"></div>
+            <div class="lives" id = "live4"></div>
+        </div>
     </div>
 
     <div class="game">
@@ -72,6 +78,9 @@
     const questionbox = document.querySelector("#q");
     const moles = document.querySelectorAll(".mole");
     const choicebox = document.querySelectorAll(".op-img");
+    const live1 = document.querySelector("#live1");
+    const live2 = document.querySelector("#live2");
+    const live3 = document.querySelector("#live3");
     let lastHole;
     let timeUp = false;
     let score = 0;
@@ -243,7 +252,7 @@
         hole.forEach(up);
 
         setTimeout(() => {
-            if (!timeUp) peep();
+            if (!timeUp && lives>0) peep();endgame();
             hole.forEach(down);
         }, time); //after the time is up we want the moles to disappear and remove the class
 
@@ -257,6 +266,33 @@
                 // console.log(Math.round(((60-timeleft)/60)*100) + '%');
             }
         }, 1000);
+    }
+
+    function endgame(){
+        if(lives == 0) {
+            live1.style.visibility = "hidden";
+            live2.style.visibility = "hidden";
+            live3.style.visibility = "hidden";
+            questionbox.textContent = "";
+            for (let i = 0; i < 4; i++) {
+                choicebox[i].textContent = "";
+            }
+        }
+        if(lives == 1){
+            live1.style.visibility = "hidden";
+            live2.style.visibility = "hidden";
+            live3.style.visibility = "visible";
+        }
+        if(lives == 2){
+            live1.style.visibility = "hidden";
+            live2.style.visibility = "visible";
+            live3.style.visibility = "visible";
+        }
+        if(lives == 3){
+            live1.style.visibility = "visible";
+            live2.style.visibility = "visible";
+            live3.style.visibility = "visible";
+        }
     }
 
     function bunk(e) {
@@ -318,7 +354,7 @@
                 tempp2 = document.getElementById("options").style.backgroundSize
 
                 document.getElementById("options").style.background = "url(\"assets/img/CorrechBg.png\")";
-                document.getElementById("options").style.backgroundSize = "650px 480px";
+                document.getElementById("options").style.backgroundSize = "650px 550px";
 
                 setTimeout(() => {
                     document.getElementById("options").style.background = tempp1;
@@ -331,18 +367,18 @@
                 tempp2 = document.getElementById("options").style.backgroundSize
 
                 document.getElementById("options").style.background = "url(\"assets/img/WrongBg.png\")";
-                document.getElementById("options").style.backgroundSize = "650px 480px";
+                document.getElementById("options").style.backgroundSize = "650px 550px";
 
                 setTimeout(() => {
                     document.getElementById("options").style.background = tempp1;
                     document.getElementById("options").style.backgroundSize = tempp2;
                 }, 500)
+                lives--;
+                endgame();
                 iter++;
                 newQuestion();
             }
         }
-
-
     }
 
     moles.forEach(mole => mole.addEventListener("click", bunk));
