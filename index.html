@@ -68,10 +68,6 @@
 
 
 
-
-
-
-
 <div class="wrong" id="wrong">
     <table id="table" >
         <tr>
@@ -149,8 +145,30 @@
     </div>
 </section>
 
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
 
 <script>
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyDNdOpGpb24rUpIieGv3XfskXAP5-4V7u8",
+        authDomain: "whatsapp-a-mole-70275.firebaseapp.com",
+        projectId: "whatsapp-a-mole-70275",
+        storageBucket: "whatsapp-a-mole-70275.appspot.com",
+        messagingSenderId: "401055315520",
+        appId: "1:401055315520:web:f3d27c9e974e288ac991a5"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+
     const holes = document.querySelectorAll(".hole");
     const scoreBoard = document.querySelector(".score");
     const questionbox = document.querySelector("#q");
@@ -179,6 +197,7 @@
     let feedback_wrong=[];
     let feedback_correct=[];
 
+    var dict1 = {};
     var username="";
 
     let easy = 8;
@@ -401,12 +420,9 @@
                 cell3.innerHTML = feedback_correct[i];
             }
 
+            update_score();
 
-
-
-
-
-
+            create_leaderboard();
         }
         if(lives == 1){
             live1.style.visibility = "hidden";
@@ -423,6 +439,69 @@
             live2.style.visibility = "visible";
             live3.style.visibility = "visible";
         }
+    }
+
+    function retrieve_data(){
+
+        var leadsRef = firebase.database().ref('/');
+        leadsRef.on('value', function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+                var childData = childSnapshot.val();
+                let key = childSnapshot.key;
+                // console.log(childData.scores[0]);
+                let arr = childData.scores;
+                dict1[key] = arr;
+
+            });
+        })
+    }
+
+    function update_score(){
+
+        console.log(2);
+        if( dict1[username] === undefined ) {
+            dict1[username] = []
+        }
+        dict1[username].push(score);
+        console.log(3);
+
+        for (let key in dict1) {
+            console.log(4);
+            firebase.database().ref(key).set({
+                scores: dict1[key],
+            });
+        }
+
+    }
+
+    function create_leaderboard(){
+        console.log(5);
+
+        var cl = [];
+        for (let key in dict1) {
+            max_of_array = Math.max.apply(Math, dict1[key]);
+            // console.log(key, max_of_array, "yo7");
+            cl.push([max_of_array, key]);
+
+            // for(let i = 0; i<dict1[key].length;i++){
+            //     cl.push([dict1[key][i], key]);
+            // }
+        }
+        cl.sort(sortFunction);
+        console.log(cl);
+
+
+        function sortFunction(a, b) {
+            if (a[0] === b[0]) {
+                return 0;
+            }
+            else {
+                return (a[0] > b[0]) ? -1 : 1;
+            }
+        }
+
+
+
     }
 
     function bunk(e) {
@@ -585,6 +664,8 @@
 
     function getName(){
 
+        username = document.getElementById('fname').value;
+        console.log(username);
 
         var div = document.getElementById('normal_mole');
         div.remove();
@@ -610,6 +691,9 @@
         div.style.display="block";
 
         div.style.visibility="hidden";
+
+
+        retrieve_data();
         startGame();
 
     }
