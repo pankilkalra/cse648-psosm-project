@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<audio id="bg" src="assets/img/bg.mp3"></audio>
+<audio id="button" src="assets/img/button.mp3"></audio>
+<audio id="correct" src="assets/img/correct.mp3"></audio>
+<audio id="incorrect" src="assets/img/incorrect.mp3"></audio>
+<audio id="end" src="assets/img/end.wav"></audio>
+
 
 <h1 id="heading3">Instructions</h1>;
 <div class="instr" id="instr">
@@ -260,6 +266,10 @@
 
     retrieve_data();
 
+
+
+
+
     const holes = document.querySelectorAll(".hole");
     const scoreBoard = document.querySelector(".score");
     const questionbox = document.querySelector("#q");
@@ -287,9 +297,11 @@
     let feedback_questions=[];
     let feedback_wrong=[];
     let feedback_correct=[];
-
     var username="";
     var cl ;
+
+
+    document.getElementById('bg').play();
 
 
     let easy = 8;
@@ -503,6 +515,12 @@
     function endgame(){
         if(lives == 0) {
 
+            var temp=document.getElementById('bg');
+            temp.src="";
+
+
+            document.getElementById('end').play();
+
 
             live1.style.visibility = "hidden";
             live2.style.visibility = "hidden";
@@ -691,6 +709,10 @@
         if(isclicked == false) {
             isclicked = true;
             if (color_selected.localeCompare(correct_answer_color) == 0) {
+
+                document.getElementById('correct').play();
+
+
                 if(iter<easy) {
                     score += 1;
                 }
@@ -719,6 +741,8 @@
                 endgame();
                 newQuestion();
             } else {
+                document.getElementById('incorrect').play();
+
                 tempp1 = document.getElementById("options").style.background;
                 tempp2 = document.getElementById("options").style.backgroundSize
 
@@ -788,6 +812,7 @@
     }
 
     function startGame() {
+        document.getElementById('button').play();
         margin_left = -2;
         lives = 3;
         var div = document.getElementById('start');
@@ -851,10 +876,14 @@
     }
 
     function homePage(){
+        document.getElementById('button').play();
+
         window.location.href = window.location.href;
     }
 
     function callInstructions(){
+        document.getElementById('button').play();
+
         var div = document.getElementById('normal_mole');
         div.style.display="none";
 
@@ -877,6 +906,8 @@
     }
 
     function callLeaderboard(){
+        document.getElementById('button').play();
+
 
         create_leaderboard();
 
