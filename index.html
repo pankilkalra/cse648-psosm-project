@@ -100,9 +100,6 @@
         <button onClick="callInstructions()" id="callInstructions"></button>
     </div>
 
-    <div class="bgsound" id="bgsound">
-        <button onClick="playBG()" id="playBG"></button>
-    </div>
 
 
 
@@ -821,6 +818,7 @@
 
     function startGame() {
         document.getElementById('button').play();
+        document.getElementById('bg').play();
         margin_left = -2;
         lives = 3;
         var div = document.getElementById('start');
@@ -885,13 +883,10 @@
 
     function homePage(){
         document.getElementById('button').play();
-
         window.location.href = window.location.href;
     }
 
     function callInstructions(){
-        var div = document.getElementById('playBG');
-        div.style.display="none";
 
         document.getElementById('button').play();
 
@@ -915,17 +910,12 @@
 
 
     }
-    function playBG(){
-        document.getElementById('bg').play();
 
-    }
     function callLeaderboard(){
         document.getElementById('button').play();
 
 
         create_leaderboard();
-        var div = document.getElementById('playBG');
-        div.style.display="none";
 
 
         var div = document.getElementById('normal_mole');
