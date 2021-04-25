@@ -282,7 +282,8 @@ th{
 #table{
 	color: #ffd966;
 	width: 100%;
-	font-size: 2.5em;
+	font-size: 1.8em;
+	font-family: OCR;
 }
 
 
@@ -321,7 +322,7 @@ th{
 #fname{
 	height:50px;
 	width:330px;
-	font-size: 3em;
+	font-size: 2.5em;
 	font-family: OCR;
 	border-style: solid;
 	border-color: black;
@@ -344,42 +345,43 @@ th{
 }
 
 #normal_m1{
-	margin-top: 20px;
+	margin-top: 21px;
 	float:left;
 	background: url("assets/img/mole1.png") bottom center no-repeat;
-	background-size: 110px 100px;
-	width: 110px;
-	height: 100px;
+	background-size: 112px 99px;
+	width: 112px;
+	height: 99px;
 }
 
 #normal_m2{
-	margin-top: 5px;
+	margin-top: -9px;
 
 	float: left;
 	background: url("assets/img/mole2.png") bottom center no-repeat;
-	background-size: 87px 115px;
-	width: 87px;
-	height: 115px;
+	background-size: 76px 129px;
+	width: 76px;
+	height: 129px;
 }
 
 #normal_m3{
-	margin-top: 20px;
+	margin-top: 13px;
 
 	float: left;
 	background: url("assets/img/mole3.png") bottom center no-repeat;
-	background-size: 100px 100px;
+	background-size: 100px 107px;
 	width: 100px;
-	height: 100px;
+	height: 107px;
 }
 
 #normal_m4{
-	margin-top: 20px;
+	margin-top: 22px;
 
 	float: left;
+	margin-left: 10px;
 	background: url("assets/img/mole4.png") bottom center no-repeat;
-	background-size: 87px 100px;
-	width: 87px;
-	height: 100px;
+	background-size: 73px 97px;
+	width: 73px;
+	height: 97px;
 }
 
 
@@ -501,6 +503,20 @@ th{
 	font-family: "OCR";
 	margin-bottom: 10px;
 	display: none;
+}
+
+#homePage{
+	margin-top: 50px;
+	display: none;
+	margin-left: 80%;
+
+
+	height:40px;
+	width:200px;
+
+	background: url("assets/img/end_game.png") bottom center no-repeat;
+	background-size: 200px 40px;
+	border-radius: 10px;
 }
 
 button:active,

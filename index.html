@@ -9,15 +9,15 @@
 <body>
 
 <div class="normal_mole" id="normal_mole">
+    <div class="normal_m" id="normal_m3">
+
+    </div>
+
     <div class="normal_m" id="normal_m1">
 
     </div>
 
     <div class="normal_m" id="normal_m2">
-
-    </div>
-
-    <div class="normal_m" id="normal_m3">
 
     </div>
 
@@ -31,7 +31,7 @@
 
 <div class="name" id="name">
     <div class="enter_name" id="enter_name" size="20">
-        <input type="text" id="fname" name="fname">
+        <input type="text" id="fname" placeholder=" Enter Username" name="fname">
     </div>
 
     <div class="to_game" id="to_game">
@@ -39,6 +39,10 @@
     </div>
 
 </div>
+
+
+
+
 
 
 <div class="moles_crying" id="moles_crying">
@@ -96,6 +100,12 @@
 
     </table>
 </div>
+
+<div class="redirect" id="redirect">
+    <button onClick="homePage()" id="homePage"></button>
+</div>
+
+
 
 
 <button onClick="startGame()" id="start">Start!</button>
@@ -396,6 +406,8 @@
 
     function endgame(){
         if(lives == 0) {
+
+
             live1.style.visibility = "hidden";
             live2.style.visibility = "hidden";
             live3.style.visibility = "hidden";
@@ -415,7 +427,7 @@
             div.remove();
 
             var div = document.getElementById('heading');
-            div.textContent="Game Over";
+            div.textContent="Game Over : "+ score;
 
 
 
@@ -428,6 +440,8 @@
             var div = document.getElementById('wrong');
             div.style.display="block";
 
+            var div = document.getElementById('homePage');
+            div.style.display="block";
 
 
             let LEN=feedback_questions.length;
@@ -601,7 +615,7 @@
                 setTimeout(() => {
                     document.getElementById("options").style.background = tempp1;
                     document.getElementById("options").style.backgroundSize = tempp2;
-                }, 500)
+                }, 1000)
                 iter++;
                 endgame();
                 newQuestion();
@@ -615,7 +629,7 @@
                 setTimeout(() => {
                     document.getElementById("options").style.background = tempp1;
                     document.getElementById("options").style.backgroundSize = tempp2;
-                }, 500)
+                }, 1000)
 
                 feedback_questions.push(questions[iter]);
                 feedback_correct.push(correct[iter]);
@@ -730,6 +744,11 @@
         startGame();
 
     }
+
+    function homePage(){
+        window.location = window.location.href;
+    }
+
 </script>
 </body>
 </html>
