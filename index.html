@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<audio id="bg" src="assets/img/bg.mp3" allow="autoplay"></audio>
+<audio id="bg" src="assets/img/bg.mp3" ></audio>
 <audio id="button" src="assets/img/button.mp3"></audio>
 <audio id="correct" src="assets/img/correct.mp3"></audio>
 <audio id="incorrect" src="assets/img/incorrect.mp3"></audio>
@@ -98,6 +98,10 @@
 
     <div class="instructions" id="instructions">
         <button onClick="callInstructions()" id="callInstructions"></button>
+    </div>
+
+    <div class="bgsound" id="bgsound">
+        <button onClick="playBG()" id="playBG"></button>
     </div>
 
 
@@ -249,7 +253,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
 
 <script>
-    document.getElementById('bg').play();
+    // document.getElementById('bg').play();
 
 
 
@@ -886,6 +890,9 @@
     }
 
     function callInstructions(){
+        var div = document.getElementById('playBG');
+        div.style.display="none";
+
         document.getElementById('button').play();
 
         var div = document.getElementById('normal_mole');
@@ -908,12 +915,17 @@
 
 
     }
+    function playBG(){
+        document.getElementById('bg').play();
 
+    }
     function callLeaderboard(){
         document.getElementById('button').play();
 
 
         create_leaderboard();
+        var div = document.getElementById('playBG');
+        div.style.display="none";
 
 
         var div = document.getElementById('normal_mole');

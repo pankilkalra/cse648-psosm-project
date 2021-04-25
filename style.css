@@ -397,6 +397,17 @@ th{
 	border-radius: 10px;
 }
 
+#playBG{
+	margin-top: 20px;
+	margin-left: 30%;
+	height:40px;
+	width:200px;
+
+	background: url("assets/img/instructions.png") bottom center no-repeat;
+	background-size: 200px 40px;
+	border-radius: 10px;
+}
+
 
 #normal_m1{
 	margin-top: 21px;
