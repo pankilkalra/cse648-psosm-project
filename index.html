@@ -8,6 +8,27 @@
 </head>
 <body>
 
+
+<div class="leader_heading" id="leader_heading">
+
+</div>
+
+
+
+<div class="leader_grid" id="leader_grid">
+    <table id="leader_table" >
+        <tr>
+            <th>S No.</th>
+            <th>Username</th>
+            <th>Score</th>
+        </tr>
+    </table>
+</div>
+
+
+
+
+
 <div class="normal_mole" id="normal_mole">
     <div class="normal_m" id="normal_m3">
 
@@ -37,6 +58,17 @@
     <div class="to_game" id="to_game">
         <button onClick="getName()" id="getname"></button>
     </div>
+
+    <div class="leaderboard" id="leaderboard">
+        <button onClick="callLeaderboard()" id="callLeaderboard"></button>
+    </div>
+
+    <div class="instructions" id="instructions">
+        <button onClick="callInstructions()" id="callInstructions"></button>
+    </div>
+
+
+
 
 </div>
 
@@ -711,8 +743,15 @@
 
     function getName(){
 
+
         username = document.getElementById('fname').value;
+
+        if (username.localeCompare("") == 0){
+            username="Anonymous";
+        }
+
         console.log(username);
+
 
         var div = document.getElementById('normal_mole');
         div.remove();
@@ -748,6 +787,39 @@
     function homePage(){
         window.location = window.location.href;
     }
+
+    function callLeaderboard(){
+        var div = document.getElementById('normal_mole');
+        div.style.display="none";
+
+        var div = document.getElementById('heading2');
+        div.style.display="none";
+
+        var div = document.getElementById('name');
+        div.style.display="none";
+
+        var div = document.getElementById('leader_heading');
+        div.style.display="block";
+
+        var div = document.getElementById('leader_grid');
+        div.style.display="block";
+
+        var table=document.getElementById("leader_table");
+
+        for(let i=0;i<1;i++) {
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+
+            cell1.innerHTML = "1";
+            cell2.innerHTML = "Himanshu Raj CSE";
+            cell3.innerHTML = "55";
+        }
+
+
+    }
+
 
 </script>
 </body>

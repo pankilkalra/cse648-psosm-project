@@ -271,14 +271,24 @@ th{
 	width: 80%;
 	margin-top: 40px;
 	margin-left: 150px;
-
 	display: none;
-
-	/*border-style: solid;*/
-	/*border-color: red;*/
 
 }
 
+#leader_grid{
+	margin-top: 30px;
+	width: 80%;
+	margin-left: 150px;
+	display: none;
+}
+
+#leader_table{
+	margin-top: 100px;
+	color: #ffd966;
+	width: 100%;
+	font-size: 1.8em;
+	font-family: OCR
+}
 
 #table{
 	color: #ffd966;
@@ -344,6 +354,28 @@ th{
 	border-radius: 10px;
 
 }
+#callLeaderboard{
+	margin-top: 20px;
+	margin-left: 30%;
+	height:40px;
+	width:200px;
+
+	background: url("assets/img/leaderboard_button.png") bottom center no-repeat;
+	background-size: 200px 40px;
+	border-radius: 10px;
+}
+
+#callInstructions{
+	margin-top: 20px;
+	margin-left: 30%;
+	height:40px;
+	width:200px;
+
+	background: url("assets/img/instructions.png") bottom center no-repeat;
+	background-size: 200px 40px;
+	border-radius: 10px;
+}
+
 
 #normal_m1{
 	margin-top: 21px;
@@ -402,6 +434,18 @@ th{
 	width: 400px;
 	margin-left: 36%;
 
+}
+
+#leader_heading{
+	display: none;
+	margin-top: 20px;
+	margin-left: 32%;
+	margin-bottom: 60px;
+	float:left;
+	background: url("assets/img/leader_heading.png") bottom center no-repeat;
+	background-size: 500px 60px;
+	width: 500px;
+	height: 60px;
 }
 
 
