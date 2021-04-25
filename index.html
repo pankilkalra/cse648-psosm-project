@@ -768,7 +768,9 @@
                 endgame();
                 newQuestion();
             } else {
-                document.getElementById('incorrect').play();
+                if(lives!=1){
+                    document.getElementById('incorrect').play();
+                }
 
                 tempp1 = document.getElementById("options").style.background;
                 tempp2 = document.getElementById("options").style.backgroundSize
