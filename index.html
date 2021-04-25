@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Whack A Mole!</title>
+    <title>WhatsApp-A-Mole!</title>
     <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -26,7 +26,7 @@
     </div>
 </div>
 
-<h1 id="heading2">Whatsapp-A-Mole!</h1>
+<h1 id="heading2">WhatsApp-A-Mole!</h1>
 
 
 <div class="name" id="name">
@@ -62,7 +62,7 @@
 
 
 
-<h1 id="heading">Whatsapp-A-Mole! <span class="score">0</span></h1>
+<h1 id="heading">WhatsApp-A-Mole! <span class="score" id="score">0</span></h1>
 
 
 
@@ -74,6 +74,24 @@
             <th>Question</th>
             <th>Your Answer</th>
             <th>Correct Answer</th>
+        </tr>
+
+        <tr>
+            <td>Question</td>
+            <td>Your Answer</td>
+            <td>Correct Answer</td>
+        </tr>
+
+        <tr>
+            <td>Question</td>
+            <td>Your Answer</td>
+            <td>Correct Answer</td>
+        </tr>
+
+        <tr>
+            <td>Question</td>
+            <td>Your Answer</td>
+            <td>Correct Answer</td>
         </tr>
 
     </table>
@@ -192,7 +210,7 @@
     let timeleft = 59;
     let margin_left = -2;
     let lives = 0;
-    let totaltime = 180000;
+    let totaltime = 18000;
     let feedback_questions=[];
     let feedback_wrong=[];
     let feedback_correct=[];
@@ -399,25 +417,39 @@
             var div = document.getElementById('heading');
             div.textContent="Game Over";
 
+
+
+
+
             var div = document.getElementById('moles_crying');
             div.style.display="block";
 
             var div = document.getElementById('wrong');
             div.style.display="block";
 
-            var table = document.getElementById('table');
 
 
             let LEN=feedback_questions.length;
 
             for(let i=0;i<LEN;i++){
-                var row = table.insertRow(-1);
-                var cell1 = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                var cell3 = row.insertCell(2);
-                cell1.innerHTML = feedback_questions[i];
-                cell2.innerHTML = feedback_wrong[i];
-                cell3.innerHTML = feedback_correct[i];
+                // var row = table.insertRow(-1);
+                // var cell1 = row.insertCell(0);
+                // var cell2 = row.insertCell(1);
+                // var cell3 = row.insertCell(2);
+                // cell1.innerHTML = feedback_questions[i];
+                // cell2.innerHTML = feedback_wrong[i];
+                // cell3.innerHTML = feedback_correct[i];
+
+                var x = document.getElementById("table").rows[i+1].cells;
+                x[0].innerHTML = feedback_questions[i];
+
+                var x = document.getElementById("table").rows[i+1].cells;
+                x[1].innerHTML = feedback_wrong[i];
+
+                var x = document.getElementById("table").rows[i+1].cells;
+                x[2].innerHTML = feedback_correct[i];
+
+
             }
 
             update_score();
