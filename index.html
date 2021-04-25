@@ -217,6 +217,9 @@
 
 <script>
 
+    var dict1 = {};
+
+
     var firebaseConfig = {
         apiKey: "AIzaSyDNdOpGpb24rUpIieGv3XfskXAP5-4V7u8",
         authDomain: "whatsapp-a-mole-70275.firebaseapp.com",
@@ -228,6 +231,7 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
+    retrieve_data();
 
     const holes = document.querySelectorAll(".hole");
     const scoreBoard = document.querySelector(".score");
@@ -257,8 +261,9 @@
     let feedback_wrong=[];
     let feedback_correct=[];
 
-    var dict1 = {};
     var username="";
+    var cl ;
+
 
     let easy = 8;
     let medium = 9;
@@ -501,7 +506,7 @@
 
             update_score();
 
-            create_leaderboard();
+            // create_leaderboard();
         }
         if(lives == 1){
             live1.style.visibility = "hidden";
@@ -554,9 +559,10 @@
     }
 
     function create_leaderboard(){
+        cl = [];
+
         console.log(5);
 
-        var cl = [];
         for (let key in dict1) {
             max_of_array = Math.max.apply(Math, dict1[key]);
             // console.log(key, max_of_array, "yo7");
@@ -578,7 +584,6 @@
                 return (a[0] > b[0]) ? -1 : 1;
             }
         }
-
 
 
     }
@@ -647,7 +652,7 @@
                 setTimeout(() => {
                     document.getElementById("options").style.background = tempp1;
                     document.getElementById("options").style.backgroundSize = tempp2;
-                }, 1000)
+                }, 500)
                 iter++;
                 endgame();
                 newQuestion();
@@ -661,7 +666,7 @@
                 setTimeout(() => {
                     document.getElementById("options").style.background = tempp1;
                     document.getElementById("options").style.backgroundSize = tempp2;
-                }, 1000)
+                }, 500)
 
                 feedback_questions.push(questions[iter]);
                 feedback_correct.push(correct[iter]);
@@ -779,16 +784,17 @@
         div.style.visibility="hidden";
 
 
-        retrieve_data();
         startGame();
 
     }
 
     function homePage(){
-        window.location = window.location.href;
+        window.location.href = window.location.href;
     }
 
     function callLeaderboard(){
+
+        create_leaderboard();
         var div = document.getElementById('normal_mole');
         div.style.display="none";
 
@@ -806,18 +812,18 @@
 
         var table=document.getElementById("leader_table");
 
-        for(let i=0;i<1;i++) {
+        for(let i=0;i<cl.length;i++) {
             var row = table.insertRow(-1);
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
 
-            cell1.innerHTML = "1";
-            cell2.innerHTML = "Himanshu Raj CSE";
-            cell3.innerHTML = "55";
+            cell1.innerHTML = (i+1);
+            cell2.innerHTML = cl[i][1];
+            cell3.innerHTML = cl[i][0];
+
+
         }
-
-
     }
 
 
