@@ -35,6 +35,21 @@ body {
 	display: none;
 }
 
+tm:nth-child(1)
+{
+	color: red;
+}
+tm:nth-child(2)
+{
+	color: red;
+}
+tm:nth-child(3)
+{
+	color: red;
+}
+
+
+
 th:nth-child(1)
 {
 	color: #ffd966;;
@@ -141,7 +156,7 @@ td{
 }
 
 #heading4{
-	margin-top: 100px	;
+	margin-top: 80px	;
 	text-align: center;
 	font-size: 5rem;
 	line-height: 1;
@@ -248,6 +263,13 @@ th{
 	text-align: left;
 	font-size: 1.25em;
 }
+tm{
+	text-align: left;
+	font-size: 1.25em;
+}
+
+
+
 
 
 #q {
@@ -435,6 +457,7 @@ th{
 
 
 #normal_m1{
+	margin-right: 7px;
 	margin-top: 21px;
 	float:left;
 	background: url("assets/img/mole1.png") bottom center no-repeat;
@@ -445,7 +468,7 @@ th{
 
 #normal_m2{
 	margin-top: -9px;
-
+	margin-right: 10px;
 	float: left;
 	background: url("assets/img/mole2.png") bottom center no-repeat;
 	background-size: 76px 129px;
@@ -464,14 +487,14 @@ th{
 }
 
 #normal_m4{
-	margin-top: 22px;
+	margin-top: 23px;
 
 	float: left;
 	margin-left: 10px;
 	background: url("assets/img/mole4.png") bottom center no-repeat;
-	background-size: 73px 97px;
+	background-size: 73px 96px;
 	width: 73px;
-	height: 97px;
+	height: 96px;
 }
 
 
@@ -525,14 +548,14 @@ th{
 	margin-top: 20px;
 	float:left;
 	background: url("assets/img/mole1-whacked.png") bottom center no-repeat;
-	background-size: 110px 100px;
-	width: 110px;
+	background-size: 112px 100px;
+	width: 112px;
 	height: 100px;
 }
 
 #mole_c2{
 	margin-top: 5px;
-
+	margin-right: 8px;
 	float: left;
 	background: url("assets/img/mole2-whacked.png") bottom center no-repeat;
 	background-size: 87px 115px;
@@ -551,13 +574,13 @@ th{
 }
 
 #mole_c4{
-	margin-top: 20px;
+	margin-top: 24px;
 
 	float: left;
 	background: url("assets/img/mole4-whacked.png") bottom center no-repeat;
-	background-size: 87px 100px;
-	width: 87px;
-	height: 100px;
+	background-size: 85px 96px;
+	width: 85px;
+	height: 96px;
 }
 
 

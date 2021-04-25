@@ -835,8 +835,11 @@
         if(iter<easy) {
             level.textContent = "Question Level - Easy";
         }
-        else {
+        else if(iter>=easy && iter<easy+medium){
             level.textContent = "Question Level - Medium";
+        }
+        else {
+            level.textContent = "Question Level - Hard";
         }
     }
 
