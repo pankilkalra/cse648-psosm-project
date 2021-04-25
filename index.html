@@ -36,6 +36,25 @@
 </div>
 
 
+<h1 id="heading4">Privacy Policy</h1>;
+<div class="privacy" id="privacy">
+    <p>
+        1.&ensp; The game collects Username and Score of the user to create a leaderboard among global players of the game. No other information is collected from the user.<br><br><br>
+        2.&ensp; If a user wishes to play anonymously, they can start the game without entering their name, and their score will be saved under the "Anonymous" tag.<br><br><br>
+        3.&ensp; The game updates the High Score of the user in the Leaderboard accordingly as it changes, and stores only the maximum value.<br><br><br>
+        4.&ensp; The data collected from the user is only used to generate the Leaderboard.<br><br><br>
+        5.&ensp; The game is not associated with any Third Party applications. User data is neither shared nor sold.
+
+    </p>
+</div>
+
+
+<div class="priv_home" id="priv_home">
+    <button onClick="homePage()" id="privacy_home"></button>
+</div>
+
+
+
 <div class="leader_heading" id="leader_heading">
 
 </div>
@@ -100,6 +119,9 @@
         <button onClick="callInstructions()" id="callInstructions"></button>
     </div>
 
+    <div class="priv" id="priv">
+        <button onClick="showPriv()" id="showPriv"></button>
+    </div>
 
 
 
@@ -817,6 +839,9 @@
     }
 
     function startGame() {
+        // var div = document.getElementById('showPriv');
+        // div.style.display="none";
+
         document.getElementById('button').play();
         document.getElementById('bg').play();
         margin_left = -2;
@@ -886,9 +911,40 @@
         window.location.href = window.location.href;
     }
 
-    function callInstructions(){
-
+    function showPriv(){
         document.getElementById('button').play();
+
+        var div = document.getElementById('showPriv');
+        div.style.display="none";
+
+
+        var div = document.getElementById('normal_mole');
+        div.style.display="none";
+
+        var div = document.getElementById('heading2');
+        div.style.display="none";
+
+        var div = document.getElementById('name');
+        div.style.display="none";
+
+        var div = document.getElementById('privacy');
+        div.style.display="block";
+
+        var div = document.getElementById('heading4');
+        div.style.display="block";
+
+        var div = document.getElementById('priv_home');
+        div.style.display="block";
+
+
+    }
+
+    function callInstructions(){
+        document.getElementById('button').play();
+
+        var div = document.getElementById('showPriv');
+        div.style.display="none";
+
 
         var div = document.getElementById('normal_mole');
         div.style.display="none";
@@ -916,6 +972,9 @@
 
 
         create_leaderboard();
+
+        var div = document.getElementById('showPriv');
+        div.style.display="none";
 
 
         var div = document.getElementById('normal_mole');
