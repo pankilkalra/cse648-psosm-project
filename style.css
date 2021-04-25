@@ -119,6 +119,27 @@ td{
 }
 
 
+#heading3{
+	margin-top: 100px	;
+	text-align: center;
+	font-size: 5rem;
+	line-height: 1;
+	margin-bottom: 60px;
+
+	color: #ffd966;
+	display: none;
+	font-family: "OCR";
+}
+#instr{
+	display: none;
+	color: #ffd966;
+	font-size: 1.8em;
+	font-family: OCR;
+	margin-left: 100px;
+}
+
+
+
 .score {
 	background: rgba(255, 255, 255, 0.2);
 	/*background-size: 30;*/
@@ -276,14 +297,14 @@ th{
 }
 
 #leader_grid{
-	margin-top: 30px;
+	margin-top: 70px;
 	width: 80%;
-	margin-left: 150px;
+	margin-left: 180px;
 	display: none;
+
 }
 
 #leader_table{
-	margin-top: 100px;
 	color: #ffd966;
 	width: 100%;
 	font-size: 1.8em;
@@ -419,8 +440,24 @@ th{
 
 
 
+#redirect_leader{
+	display: none;
+
+}
+
+#homePage_leader{
+	margin-left: 43%;
+	/*margin-top: 50px;*/
 
 
+	height:40px;
+	width:200px;
+
+	background: url("assets/img/end_game.png") bottom center no-repeat;
+	background-size: 200px 40px;
+	border-radius: 10px;
+
+}
 
 
 
@@ -435,13 +472,12 @@ th{
 	margin-left: 36%;
 
 }
-
 #leader_heading{
 	display: none;
-	margin-top: 20px;
-	margin-left: 32%;
+	margin-top: 50px;
+	margin-left: 33%;
 	margin-bottom: 60px;
-	float:left;
+
 	background: url("assets/img/leader_heading.png") bottom center no-repeat;
 	background-size: 500px 60px;
 	width: 500px;
@@ -554,6 +590,22 @@ th{
 	margin-top: 50px;
 	display: none;
 	margin-left: 80%;
+
+
+	height:40px;
+	width:200px;
+
+	background: url("assets/img/end_game.png") bottom center no-repeat;
+	background-size: 200px 40px;
+	border-radius: 10px;
+}
+#instr_home{
+	display: none;
+}
+
+#instr_homePage{
+	margin-top: 50px;
+	margin-left: 44%;
 
 
 	height:40px;

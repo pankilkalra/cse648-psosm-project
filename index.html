@@ -9,9 +9,36 @@
 <body>
 
 
+<h1 id="heading3">Instructions</h1>;
+<div class="instr" id="instr">
+    <p>
+        1.&ensp; The duration of the game will be 3 minutes. <br><br>
+        2.&ensp;  Each player will receive 3 lives, at the end of these 3 lives, the game will be over. <br><br>
+        3.&ensp;  Each question will have one mole with the correct answer. <br><br>
+        4.&ensp;  The scores will be as follows: <br><br>
+        &emsp;&emsp;&emsp;&emsp;- [Easy] Correct Answer: 1 point<br>
+        &emsp;&emsp;&emsp;&emsp;- [Medium] Correct Answer: 2 points<br>
+        &emsp;&emsp;&emsp;&emsp;- [Hard] Correct Answer: 3 points<br>
+        &emsp;&emsp;&emsp;&emsp;- Incorrect Answer: -1 life<br><br>
+        5.&ensp; The higher the score, the higher the ranking on the leaderboard.
+    </p>
+</div>
+
+
+<div class="instr_home" id="instr_home">
+    <button onClick="homePage()" id="instr_homePage"></button>
+</div>
+
+
 <div class="leader_heading" id="leader_heading">
 
 </div>
+
+
+<div class="redirect_leader" id="redirect_leader">
+    <button onClick="homePage()" id="homePage_leader"></button>
+</div>
+
 
 
 
@@ -113,21 +140,21 @@
         </tr>
 
         <tr>
-            <td>Question</td>
-            <td>Your Answer</td>
-            <td>Correct Answer</td>
+            <td>&emsp;&emsp;</td>
+            <td>&emsp;&emsp;</td>
+            <td>&emsp;&emsp;</td>
         </tr>
 
         <tr>
-            <td>Question</td>
-            <td>Your Answer</td>
-            <td>Correct Answer</td>
+            <td>&emsp;&emsp;</td>
+            <td>&emsp;&emsp;</td>
+            <td>&emsp;&emsp;</td>
         </tr>
 
         <tr>
-            <td>Question</td>
-            <td>Your Answer</td>
-            <td>Correct Answer</td>
+            <td>&emsp;&emsp;</td>
+            <td>&emsp;&emsp;</td>
+            <td>&emsp;&emsp;</td>
         </tr>
 
     </table>
@@ -267,6 +294,7 @@
 
     let easy = 8;
     let medium = 9;
+    let hard = 6;
 
     let isclicked = false;
 
@@ -279,6 +307,13 @@
     for(let i=easy;i<easy+medium;i++){
         idx2.push(i)
     }
+
+    let idx3= [];
+    for(let i=easy+medium;i<easy+medium+hard;i++){
+        idx3.push(i)
+    }
+
+
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -287,7 +322,11 @@
     }
     shuffleArray(idx1);
     shuffleArray(idx2);
+    shuffleArray(idx3);
+
     let idx=idx1.concat(idx2);
+    idx=idx.concat(idx3);
+
     console.log(idx);
 
 
@@ -299,6 +338,7 @@
         "Does WhatsApp receive information about me from 3rd parties?",
         "Can you block business accounts?",
         "After what duration of account activation can you delete your WhatsApp account?",
+
         "Can Facebook read your chats and calls?",
         "If I reply to a disappearing message, the quoted text remains in the chat after 7 days",
         "Can disappearing messages be stored in backup?",
@@ -309,6 +349,14 @@
         "What content can WhatsApp see in your personal chats?",
         "What is the minimum age to have a WhatsApp account?",
 
+        "What can’t disappearing messages do?",
+        "The mandatory information required to create a WhatsApp account includes",
+        "What are the requirements of Number Verification?",
+        "What happens if you don't agree to the whatsapp privacy policy?",
+        "What information do I not need to provide WhatsApp?",
+        "How does WhatsApp use information collected?"
+
+
     ];
     const temp2 = [["Age","Phone number","Name","Profile Picture"],
         ["Facebook","Google", "Microsoft","Oracle"],
@@ -318,6 +366,7 @@
         ["Yes, receives data","No, neither gives or receives data ","No, provides data to 3rd parties","Yes, sends & receives data both"],
         ["Yes, whenever I want","Yes, after receiving spam messages","No","Yes, if not affiliated to WhatsApp"],
         ["Whenever","7 days","12 hours","30 minutes"],
+
         ["No","Yes","No, WhatsApp can","No, it only has access to calls"],
         ["True","False","Only if I star the message","I can choose the ones I want to see"],
         ["Yes","No","Only the ones starred","I can choose which ones I want to upload"],
@@ -327,12 +376,22 @@
         ["30 days","1 day","7 days","365 days"],
         ["None","Call","Location","Messages"],
         ["13","18","11","8"],
+
+        ["Media can be hidden","Forward, copy messages & media","Download media into gallery","Take screenshots"],
+        ["Mobile Number","Profile photo","About Status","Story"],
+        ["Able to receive phone calls, SMSs","Call blocking is disabled","Active internet connections","No need to verify number"],
+        ["No account","Account with restricted usage","Account with no usage","Account with unrestricted usage"],
+        ["Messages","Names","Connections","Mobile Number"],
+        ["Business Interactions","Data sold to 3rd parties","Personalization","Stored for future use"]
+
     ];
+
+
 
     let questions=[];
     let choices=[];
 
-    for(let i=0;i<easy+medium;i++){
+    for(let i=0;i<easy+medium+hard;i++){
         questions.push(temp1[idx[i]]);
         choices.push(temp2[idx[i]]);
 
@@ -635,8 +694,11 @@
                 if(iter<easy) {
                     score += 1;
                 }
+                else if(iter>=easy && iter<easy+medium){
+                    score+=2
+                }
                 else {
-                    score += 2;
+                    score += 3;
                 }
                 // score++;
 
@@ -792,9 +854,33 @@
         window.location.href = window.location.href;
     }
 
+    function callInstructions(){
+        var div = document.getElementById('normal_mole');
+        div.style.display="none";
+
+        var div = document.getElementById('heading2');
+        div.style.display="none";
+
+        var div = document.getElementById('name');
+        div.style.display="none";
+
+        var div = document.getElementById('instr');
+        div.style.display="block";
+
+        var div = document.getElementById('heading3');
+        div.style.display="block";
+
+        var div = document.getElementById('instr_home');
+        div.style.display="block";
+
+
+    }
+
     function callLeaderboard(){
 
         create_leaderboard();
+
+
         var div = document.getElementById('normal_mole');
         div.style.display="none";
 
@@ -809,6 +895,11 @@
 
         var div = document.getElementById('leader_grid');
         div.style.display="block";
+
+        var div = document.getElementById('redirect_leader');
+        div.style.display="block";
+
+
 
         var table=document.getElementById("leader_table");
 
