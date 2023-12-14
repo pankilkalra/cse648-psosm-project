@@ -22,7 +22,7 @@ Please refer to the blog published [here](https://cse648psosm2021.blogspot.com/2
 * [style.css](style.css)  - contains the style elements
 * [assets](assets/) - contains the image and audio files used in the game
 
-### Project was done as part of PSOSM course in the Winter 2021 semester of IIITD under the guidance of Prof. Ponnurangam Kumaraguru by: 
+### Project was done as part of PSOSM course in the Winter 2021 semester of IIITD under the guidance of Prof. Ponnurangam Kumaraguru. This was the tech team: 
 * Aneesha Lakra
 * Daksh Thapar
 * Himanshu Raj
